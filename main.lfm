@@ -1,0 +1,58 @@
+object Form1: TForm1
+  Left = 461
+  Height = 316
+  Top = 243
+  Width = 470
+  Caption = 'Form1'
+  ClientHeight = 316
+  ClientWidth = 470
+  LCLVersion = '1.8.0.4'
+  object ListBox1: TListBox
+    Left = 0
+    Height = 249
+    Top = 32
+    Width = 465
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    ItemHeight = 0
+    TabOrder = 0
+  end
+  object Label1: TLabel
+    Left = 0
+    Height = 17
+    Top = 8
+    Width = 100
+    Caption = 'Fichiers à charger'
+    ParentColor = False
+  end
+  object Button1: TButton
+    Left = 357
+    Height = 23
+    Top = 4
+    Width = 108
+    Caption = 'Ajouter'
+    OnClick = Button1Click
+    TabOrder = 1
+  end
+  object Button2: TButton
+    Left = 390
+    Height = 25
+    Top = 290
+    Width = 75
+    Anchors = [akLeft, akBottom]
+    Caption = 'Fusionner'
+    OnClick = Button2Click
+    TabOrder = 2
+  end
+  object OpenDialog1: TOpenDialog
+    Filter = 'Fichiers GPX|*.gpx'
+    Options = [ofAllowMultiSelect, ofEnableSizing, ofViewDetail]
+    left = 248
+    top = 272
+  end
+  object SaveDialog1: TSaveDialog
+    FileName = 'fusion.gpx'
+    Filter = 'Fichiers GPX|*.gpx'
+    left = 136
+    top = 272
+  end
+end
