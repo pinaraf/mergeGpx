@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  XMLRead, XMLWrite, DOM;
+  XMLRead, XMLWrite, DOM, lcltype;
 
 type
 
@@ -21,6 +21,7 @@ type
     OpenDialog1: TOpenDialog;
     SaveDialog1: TSaveDialog;
     procedure addFileBtnClick(Sender: TObject);
+    procedure fileListKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure mergeBtnClick(Sender: TObject);
   private
 
@@ -46,6 +47,37 @@ begin
   end;
 end;
 
+procedure TForm1.fileListKeyUp(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+var
+  NewList: TStrings;
+  i: integer;
+begin
+  if Key = VK_DELETE then
+  begin
+    NewList := TStringList.Create;
+    for i := 0 to fileList.Items.Count - 1 do
+    begin
+      if not(fileList.Selected[i]) then
+         NewList.Add(fileList.Items[i]);
+    end;
+    fileList.Items := NewList;
+  end;
+end;
+
+procedure renameTrack(TrackNode: TDOMNode; TrackIdx: integer);
+var
+  Children: TDOMNodeList;
+  i: integer;
+begin
+  Children := TrackNode.GetChildNodes;
+  for i := 0 to Children.Count - 1 do
+  begin
+    if Children.Item[i].NodeName = 'name' then
+      Children.Item[i].TextContent := format('%d - %s', [TrackIdx, Children.Item[i].TextContent]);
+  end;
+end;
+
 procedure TForm1.mergeBtnClick(Sender: TObject);
 var
   Doc: TXMLDocument;
@@ -57,9 +89,11 @@ var
   SegmentNode: TDOMNode;
   TrackNode: TDOMNode;
   i, j: integer;
+  trackIdx: integer;
 begin
   if not(SaveDialog1.Execute) then Exit;
 
+  trackIdx := 1;
   try
     TargetDoc := TXMLDocument.Create;
     RootNode := TargetDoc.CreateElementNS('http://www.topografix.com/GPX/1/1', 'gpx');   
@@ -73,6 +107,8 @@ begin
         for j := 0 to SourceNodes.Count - 1 do
         begin
           ImportedNode := TargetDoc.ImportNode(SourceNodes.Item[j], true);
+          renameTrack(ImportedNode, trackIdx);
+          trackIdx := trackIdx + 1;
           RootNode.AppendChild(ImportedNode);
         end;
       finally
@@ -93,6 +129,7 @@ begin
     end;
     WriteXMLFile(TargetDoc, SaveDialog1.FileName);
     ShowMessage('Fichier généré');
+    fileList.Clear;
   finally
     TargetDoc.Free;
   end;

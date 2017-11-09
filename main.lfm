@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 461
+  Left = 494
   Height = 388
-  Top = 243
+  Top = 212
   Width = 529
   Caption = 'MergeGPX'
   ClientHeight = 388
@@ -15,6 +15,8 @@ object Form1: TForm1
     Width = 524
     Anchors = [akTop, akLeft, akRight, akBottom]
     ItemHeight = 0
+    MultiSelect = True
+    OnKeyUp = fileListKeyUp
     TabOrder = 0
   end
   object Label1: TLabel

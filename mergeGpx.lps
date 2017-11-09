@@ -2,14 +2,14 @@
 <CONFIG>
   <ProjectSession>
     <Version Value="10"/>
-    <BuildModes Active="Default"/>
+    <BuildModes Active="Release"/>
     <Units Count="4">
       <Unit0>
         <Filename Value="mergeGpx.lpr"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="2"/>
         <CursorPos X="3" Y="9"/>
-        <UsageCount Value="24"/>
+        <UsageCount Value="25"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -20,8 +20,8 @@
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
         <TopLine Value="56"/>
-        <CursorPos X="35" Y="96"/>
-        <UsageCount Value="24"/>
+        <CursorPos Y="91"/>
+        <UsageCount Value="25"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -29,7 +29,7 @@
         <Filename Value="1.gpx"/>
         <EditorIndex Value="1"/>
         <CursorPos X="12" Y="13"/>
-        <UsageCount Value="12"/>
+        <UsageCount Value="13"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="None"/>
       </Unit2>
@@ -39,8 +39,23 @@
         <UsageCount Value="10"/>
         <DefaultSyntaxHighlighter Value="None"/>
       </Unit3>
+      <Unit4>
+        <Filename Value="/usr/share/fpcsrc/3.0.2/packages/x11/src/keysym.pp"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos Y="41"/>
+        <UsageCount Value="10"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="/usr/lib/lazarus/1.8.0/lcl/lcltype.pp"/>
+        <UnitName Value="LCLType"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="415"/>
+        <CursorPos X="3" Y="435"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit5>
     </Units>
-    <JumpHistory Count="12" HistoryIndex="11">
+    <JumpHistory Count="23" HistoryIndex="22">
       <Position1>
         <Filename Value="main.pas"/>
       </Position1>
@@ -88,6 +103,50 @@
         <Filename Value="main.pas"/>
         <Caret Line="59" Column="6" TopLine="34"/>
       </Position12>
+      <Position13>
+        <Filename Value="main.pas"/>
+        <Caret Line="102" Column="20" TopLine="63"/>
+      </Position13>
+      <Position14>
+        <Filename Value="main.pas"/>
+        <Caret Line="53" Column="3" TopLine="40"/>
+      </Position14>
+      <Position15>
+        <Filename Value="main.pas"/>
+        <Caret Line="70" TopLine="56"/>
+      </Position15>
+      <Position16>
+        <Filename Value="main.pas"/>
+        <Caret Line="129" TopLine="89"/>
+      </Position16>
+      <Position17>
+        <Filename Value="main.pas"/>
+        <Caret Line="70" Column="30" TopLine="42"/>
+      </Position17>
+      <Position18>
+        <Filename Value="main.pas"/>
+        <Caret Line="9" Column="34"/>
+      </Position18>
+      <Position19>
+        <Filename Value="mergeGpx.lpr"/>
+        <Caret Line="9" Column="3"/>
+      </Position19>
+      <Position20>
+        <Filename Value="main.pas"/>
+        <Caret Line="62" Column="11" TopLine="42"/>
+      </Position20>
+      <Position21>
+        <Filename Value="/usr/lib/lazarus/1.8.0/lcl/lcltype.pp"/>
+        <Caret Line="435" Column="3" TopLine="415"/>
+      </Position21>
+      <Position22>
+        <Filename Value="main.pas"/>
+        <Caret Line="62" Column="11" TopLine="42"/>
+      </Position22>
+      <Position23>
+        <Filename Value="main.pas"/>
+        <Caret Line="24" Column="53" TopLine="4"/>
+      </Position23>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>
